@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-news-portal",
+  "version": "1.0.0",
+  "description": "News portal app from NodeJS Course @ Udemy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciusls/nodejs-news-portal.git"
+  },
+  "keywords": [
+    "news",
+    "portal",
+    "nodejs"
+  ],
+  "author": "Vinicius Silva <vinicius768@msn.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viniciusls/nodejs-news-portal/issues"
+  },
+  "homepage": "https://github.com/viniciusls/nodejs-news-portal#readme"
+}
