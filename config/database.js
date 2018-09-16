@@ -6,4 +6,3 @@ module.exports = () => mysql.createConnection({
         user: 'root',
         password: 'root'
     });
-
