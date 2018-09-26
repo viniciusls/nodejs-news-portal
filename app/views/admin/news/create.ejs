@@ -20,7 +20,7 @@
 
 		<br />
 
-		<% if(errors){ %>
+		<% if(errors) { %>
 			<ul>
 				<% for(var i = 0; i < errors.length; i++){ %>
 					<li>
@@ -30,7 +30,7 @@
 			</ul>
 		<% } %>
 
-		<form action="news/create" method="post">
+		<form action="/news/create" method="post">
 			<label for="title">Título: </label>
 			<input type="text" name="title" id="title" value="<%= news.title %>"><br />
 			<label for="author">Autor: </label>

@@ -1,8 +1,7 @@
 module.exports = (application) => {
-    const connection = application.config.database();
-
     application.get('/news', (req, res) => {
-        const newsModel = new application.app.models.NoticiasDAO(connection);
+        const connection = application.config.database();
+        const newsModel = new application.app.models.NewsDAO(connection);
 
         newsModel.getAll((error, result) => {
             res.render('news/index', { news: result });
