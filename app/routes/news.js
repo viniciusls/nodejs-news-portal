@@ -1,10 +1,10 @@
-const database = require('../../config/database');
+module.exports = (application) => {
+    const connection = application.config.database();
 
-module.exports = (app) => {
-    app.get('/news', (req, res) => {
-        const connection = database();
+    application.get('/news', (req, res) => {
+        const newsModel = new application.app.models.NoticiasDAO(connection);
 
-        connection.query('SELECT * FROM news', (error, result) => {
+        newsModel.getAll((error, result) => {
             res.render('news/index', { news: result });
         });
     });

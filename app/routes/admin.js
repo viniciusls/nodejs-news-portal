@@ -1,16 +1,15 @@
-const database = require('../../config/database');
-
-module.exports = (app) => {
-    app.post('/news/create', (req, res) => {
+module.exports = (application) => {
+    application.post('/news/create', (req, res) => {
         const noticia = req.body;
-        const connection = database();
+        const connection = application.config.database();
+        const newsModel = new application.app.models.NoticiasDAO(connection);
 
-        connection.query('INSERT INTO news SET ?', noticia, (error, result) => {
-            res.redirect('news/index');
+        newsModel.save(noticia, (error, result) => {
+            res.redirect('news');
         });
     });
 
-    app.get('/news/create', (req, res) => {
+    application.applicationget('/news/create', (req, res) => {
         res.render('admin/news/create');
     });
 };
