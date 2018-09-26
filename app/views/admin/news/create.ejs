@@ -18,17 +18,29 @@
 		
 		<h1>Adicionar notícia</h1>
 
+		<br />
+
+		<% if(errors){ %>
+			<ul>
+				<% for(var i = 0; i < errors.length; i++){ %>
+					<li>
+						<%= errors[i].msg %>
+					</li>
+				<% } %>
+			</ul>
+		<% } %>
+
 		<form action="news/create" method="post">
 			<label for="title">Título: </label>
-			<input type="text" name="title" id="title"><br />
+			<input type="text" name="title" id="title" value="<%= news.title %>"><br />
 			<label for="author">Autor: </label>
-			<input type="text" name="author" id="author"><br />
+			<input type="text" name="author" id="author" value="<%= news.author %>"><br />
 			<label for="summary">Resumo: </label>
-			<textarea name="summary" id="summary"></textarea><br />
+			<textarea name="summary" id="summary"><%= news.summary %></textarea><br />
 			<label for="content">Conteúdo: </label>
-			<input type="text" name="content" id="content"><br />
+			<textarea name="content" id="content"><%= news.content %></textarea><br />
 			<label for="news_at">Data da notícia: </label>
-			<input type="date" name="news_at" id="news_at"><br />
+			<input type="date" name="news_at" id="news_at" value="<%= news.news_at %>"><br />
 
 			<input type="submit" value="Cadastrar notícia">
 		</form>
