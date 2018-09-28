@@ -15,6 +15,23 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+        <h1>Notícia: <%= news.id %></h1>
+
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>Título</td>
+                <td>Conteúdo</td>
+                <td>Data de criação</td>
+            </tr>
+
+            <tr>
+                <td><%= news.id %></td>
+                <td><%= news.title %></td>
+                <td><%= news.content %></td>
+                <td><%= news.created_at %></td>
+            </tr>
         
         <script src="" async defer></script>
     </body>

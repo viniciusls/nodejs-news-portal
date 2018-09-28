@@ -11,7 +11,7 @@ NewsDAO.prototype.getAll = function (callback) {
 };
 
 NewsDAO.prototype.getById = function (id, callback) {
-    this.connection.query('SELECT * FROM news WHERE ID = ?', id, callback);
+    this.connection.query('SELECT * FROM news WHERE ID = ?', id, (error, result) => callback(error, result[0]));
 };
 
 module.exports = function () {
