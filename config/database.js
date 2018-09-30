@@ -4,7 +4,7 @@ const connMySQL = () => mysql.createConnection({
         host: 'localhost',
         database: 'nodejs-news-portal',
         user: 'root',
-        password: 'root'
+        password: ''
     });
 
 module.exports = () => connMySQL;

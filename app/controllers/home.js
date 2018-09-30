@@ -1,3 +1,8 @@
 module.exports.index = function (application, req, res) {
-    res.render('home/index');
+    const connection = application.config.database();
+    const newsModel = new application.app.models.NewsDAO(connection);
+
+    newsModel.getAll(50, 0, (error, result) => {
+        res.render('home/index', { news: result });
+    });
 };

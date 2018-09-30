@@ -9,7 +9,7 @@ module.exports.index = function (application, req, res) {
             res.render('news/view', { news: result });
         });
     } else {
-        newsModel.getAll((error, result) => {
+        newsModel.getAll(null, null, (error, result) => {
             res.render('news/index', { news: result });
         });
     }
