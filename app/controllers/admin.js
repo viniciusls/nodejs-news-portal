@@ -15,7 +15,7 @@ module.exports.store = function (application, req, res) {
     const errors = req.validationErrors();
 
     if (errors) {
-        res.redirect('/news/create', { errors, news });
+        res.render('admin/news/create', { errors, news });
 
         return;
     }

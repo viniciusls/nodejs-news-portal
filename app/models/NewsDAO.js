@@ -8,7 +8,7 @@ NewsDAO.prototype.save = function (news, callback) {
 
 NewsDAO.prototype.getAll = function (limit = 50, offset = 0, callback) {
     console.log(limit, offset);
-    this.connection.query('SELECT * FROM news ORDER BY news_at DESC LIMIT ? OFFSET ?', [limit, offset], callback);
+    this.connection.query('SELECT * FROM news ORDER BY news_at DESC, id DESC LIMIT ? OFFSET ?', [limit, offset], callback);
 };
 
 NewsDAO.prototype.getById = function (id, callback) {
